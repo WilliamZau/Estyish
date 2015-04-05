@@ -7,7 +7,6 @@
     <th class="center">Price</th>
     <th class="center">Action</th>
   </tr>
-<div>
   <% @listings.each do |listing| %>
     <tr>
       <td><%= image_tag listing.image.url(:thumb) %></td>
@@ -29,6 +28,7 @@
     </tr>
     <% end %>
 </table>
+</div>
 <br>
 
 
