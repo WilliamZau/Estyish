@@ -49,11 +49,13 @@ class OrdersController < ApplicationController
       flash[:danger] = e.message
     end
 
-    transfer = Stripe::Transfer.create(
-      :amount => (@listing.price * 95).floor,
-      :currency => "usd",
-      :recipient => @seller.recipient
-      )
+
+    # Uncomment this section for transfers to work properly, they work locally but not on Heroku
+    #transfer = Stripe::Transfer.create(
+      #:amount => (@listing.price * 95).floor,
+      #:currency => "usd",
+      #:recipient => @seller.recipient
+      #)
 
 
     respond_to do |format|
